@@ -17,8 +17,19 @@
         </div>
     </div>
 
+    <div class="mb-4">
+        <a href="{{ route('books.reviews.create', $book) }}" class="reset-link">
+            Add a Review!
+        </a>
+    </div>
+
     <div>
         <h2 class="mb-4 text-xl font-semibold">Reviews</h2>
+        @if (session('status'))
+            <div class="bg-green-500 text-white px-4 py-2 rounded-md mb-4">
+                {{ session('status') }}
+            </div>
+        @endif
         <ul>
             @forelse ($book->reviews as $review)
                 <li class="book-item mb-4">
