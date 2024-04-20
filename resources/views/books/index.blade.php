@@ -63,5 +63,12 @@
             </li>
         @endforelse
 
+        @if($book->count())
+            <nav class="mt-4">
+                {{ $books->appends(['filter' => request('filter')])->links() }}
+            </nav>
+        @endif
+
     </ul>
+
 @endsection
